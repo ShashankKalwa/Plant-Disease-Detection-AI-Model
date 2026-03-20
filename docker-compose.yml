@@ -1,0 +1,25 @@
+# ==============================================================================
+# docker-compose.yml — PlantDoctor AI services
+# ==============================================================================
+
+version: "3.8"
+
+services:
+  plantdoctor-api:
+    build: .
+    container_name: plantdoctor-api
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./data:/app/data
+      - ./outputs:/app/outputs
+    environment:
+      - MODEL_PATH=/app/outputs/models/best_model.pth
+      - CSV_PATH=/app/plant_disease_training_dataset_optionB.csv
+      - API_HOST=0.0.0.0
+      - API_PORT=8000
+    restart: unless-stopped
+    deploy:
+      resources:
+        limits:
+          memory: 4G
