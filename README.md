@@ -19,15 +19,7 @@ The API is deployed and running on **Hugging Face Spaces**:
 
 🔗 **[PlantDoctor AI — Live API](https://huggingface.co/spaces/ShashankKalwa/PlantDoctor_AI-Disease_Detection_API)**
 
-You can test the API directly without any local setup:
-```bash
-# Health check
-curl https://shashankkalwa-plantdoctor-ai-disease-detection-api.hf.space/health
-
-# Predict a disease
-curl -X POST https://shashankkalwa-plantdoctor-ai-disease-detection-api.hf.space/predict \
-  -F "file=@leaf.jpg"
-```
+You can test the API directly without any local setup by clicking the link above and using the interactive demo.
 
 ---
 
