@@ -61,12 +61,12 @@ DROPOUT_RATE    = 0.3
 
 # -- GPU Enforcement ---------------------------------------------------------
 DEVICE          = "cuda"       # Target device -- enforced by validate_gpu()
-FORCE_GPU       = False         # If True, crash with clear error when GPU missing
+FORCE_GPU       = True         # If True, crash with clear error when GPU missing
 
 # -- GPU Optimizations -- RTX 2050 (4GB VRAM, Ampere) -----------------------
-USE_AMP             = False     # Automatic Mixed Precision -- 2-3x speed, ~40% VRAM saved
-CUDNN_BENCHMARK     = False     # cuDNN auto-tuning -- 10-20% faster convolutions
-USE_CHANNELS_LAST   = False     # NHWC memory layout -- 5-15% faster on Ampere
+USE_AMP             = True     # Automatic Mixed Precision -- 2-3x speed, ~40% VRAM saved
+CUDNN_BENCHMARK     = True     # cuDNN auto-tuning -- 10-20% faster convolutions
+USE_CHANNELS_LAST   = True     # NHWC memory layout -- 5-15% faster on Ampere
 
 # -- DataLoader --------------------------------------------------------------
 NUM_WORKERS     = 0            # 0 for Windows (avoids shared memory crash)

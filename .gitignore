@@ -11,23 +11,21 @@ venv.bak/
 data/
 archive/
 outputs/
+
+# PyTorch / ML model files
+*.pt
 *.pth
+*.ckpt
 *.onnx
 *.tflite
-*.json
-!plant_disease_training_dataset_optionB.csv
+
+# Keep the CSV dataset info file (it's not ignored, but explicit for clarity)
+# plant_disease_training_dataset_optionB.csv is tracked
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
 *$py.class
-
-# PyTorch/ML specific
-.pt
-.pth
-.ckpt
-*.onnx
-*.tflite
 
 # Distribution / packaging
 .Python

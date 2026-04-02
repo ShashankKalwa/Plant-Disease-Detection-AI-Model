@@ -5,10 +5,29 @@
 ![FastAPI](https://img.shields.io/badge/FastAPI-0.110%2B-009688?logo=fastapi&logoColor=white)
 ![Accuracy](https://img.shields.io/badge/Accuracy-95%25-success)
 ![Classes](https://img.shields.io/badge/Classes-38-orange)
+[![Hugging Face Spaces](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Spaces-blue)](https://huggingface.co/spaces/ShashankKalwa/PlantDoctor_AI-Disease_Detection_API)
 
 **Production-grade plant disease detection** powered by EfficientNetV2-S with a FastAPI REST API, disease knowledge base from CSV, and mobile model export (ONNX + TFLite).
 
 > 38-class classifier on the [PlantVillage dataset](https://www.kaggle.com/datasets/abdallahalidev/plantvillage-dataset) · Target accuracy: **90–95%** · Inference: **< 300ms CPU**
+
+---
+
+## 🌐 Live Demo
+
+The API is deployed and running on **Hugging Face Spaces**:
+
+🔗 **[PlantDoctor AI — Live API](https://huggingface.co/spaces/ShashankKalwa/PlantDoctor_AI-Disease_Detection_API)**
+
+You can test the API directly without any local setup:
+```bash
+# Health check
+curl https://shashankkalwa-plantdoctor-ai-disease-detection-api.hf.space/health
+
+# Predict a disease
+curl -X POST https://shashankkalwa-plantdoctor-ai-disease-detection-api.hf.space/predict \
+  -F "file=@leaf.jpg"
+```
 
 ---
 
