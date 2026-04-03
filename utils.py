@@ -20,9 +20,6 @@ from typing import Any, Optional
 import torch
 import torch.nn as nn
 import numpy as np
-import matplotlib
-matplotlib.use("Agg")
-import matplotlib.pyplot as plt
 
 
 # ── Best Model Checkpoint (tracks val_accuracy — higher is better) ────────────
@@ -250,6 +247,10 @@ def plot_curves(history: dict, save_dir: str) -> None:
         history: Dict with train_loss, val_loss, train_acc, val_acc lists.
         save_dir: Directory to save the plot PNGs.
     """
+    import matplotlib
+    matplotlib.use("Agg")
+    import matplotlib.pyplot as plt
+
     os.makedirs(save_dir, exist_ok=True)
 
     epochs = range(1, len(history["train_loss"]) + 1)
@@ -291,6 +292,10 @@ def plot_per_class_accuracy(report_dict: dict, save_dir: str) -> None:
         report_dict: Output of sklearn classification_report(output_dict=True).
         save_dir: Directory to save the plot PNG.
     """
+    import matplotlib
+    matplotlib.use("Agg")
+    import matplotlib.pyplot as plt
+
     os.makedirs(save_dir, exist_ok=True)
 
     # Extract per-class entries (skip summary rows)
@@ -333,6 +338,10 @@ def plot_confusion_matrix(cm: np.ndarray, class_names: list,
         class_names: List of class names in index order.
         save_dir: Directory to save the plot PNG.
     """
+    import matplotlib
+    matplotlib.use("Agg")
+    import matplotlib.pyplot as plt
+
     os.makedirs(save_dir, exist_ok=True)
 
     fig, ax = plt.subplots(figsize=(max(14.0, len(class_names) * 0.5),

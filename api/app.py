@@ -20,7 +20,6 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 import config
 from model import build_model
 from predict import predict_single, _get_inference_transform
-from dataset import get_disease_info
 from utils import load_model_bundle
 from api.schemas import (
     PredictionResponse, BatchPredictionResponse,
@@ -186,7 +185,7 @@ def _predict_from_image(image: Image.Image) -> dict:
         cls_name = idx_to_class.get(idx.item(), f"class_{idx.item()}")
         info = disease_db.get(cls_name)
         top5_results.append({
-            "class": cls_name,
+            "class_raw": cls_name,
             "disease_name": info.get("disease_name", cls_name),
             "confidence_pct": round(prob.item() * 100, 2),
         })

@@ -1,14 +1,25 @@
-torch>=2.1.0
-torchvision>=0.16.0
+# ================================================================
+# PlantDoctor AI — HuggingFace Space Requirements
+# Runtime: CPU inference only (no CUDA needed for hosting)
+# Python : 3.11
+# ================================================================
+
+# ── Core ML ───────────────────────────────────────────────────
+--extra-index-url https://download.pytorch.org/whl/cpu
+torch==2.1.0+cpu
+torchvision==0.16.0+cpu
+
 Pillow>=10.0.0
-scikit-learn>=1.3.0
-matplotlib>=3.7.0
-numpy>=1.24.0
-tqdm>=4.65.0
+numpy>=1.24.0,<2.0.0
+
+# ── API ───────────────────────────────────────────────────────
 fastapi>=0.110.0
 uvicorn[standard]>=0.27.0
 python-multipart>=0.0.9
 pydantic>=2.5.0
-onnx>=1.15.0
-onnxruntime>=1.17.0
+
+# ── Disease database ──────────────────────────────────────────
+rapidfuzz>=3.0.0
+
+# ── Utilities ─────────────────────────────────────────────────
 python-dotenv>=1.0.0

@@ -8,13 +8,10 @@ from pydantic import BaseModel, Field
 
 class Top5Item(BaseModel):
     """A single entry in the top-5 predictions list."""
-    class_raw: str = Field(..., alias="class",
-                            description="Raw class folder name")
+    class_raw: str = Field(..., description="Raw class folder name")
     disease_name: str = Field(..., description="Human-readable disease name")
     confidence_pct: float = Field(..., ge=0, le=100,
                                    description="Confidence percentage")
-
-    model_config = {"populate_by_name": True}
 
 
 class PredictionResponse(BaseModel):
